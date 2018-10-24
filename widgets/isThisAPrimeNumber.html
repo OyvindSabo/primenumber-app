@@ -33,7 +33,7 @@
 
 <!--JavaScript -->
 <script>
-  const isPrime = number => document.getElementById('result').innerHTML = number === ''
+  const isPrime = number => number === ''
     ? '&nbsp'
     : [0, 1].indexOf(parseInt(number)) !== -1
     ? 'No'
@@ -48,7 +48,7 @@
 <!-- HTML -->
 <body>
   <div id='isPrimeWidget'>
-      Is <input id='inputField' type='number' oninput='isPrime(value)'></input> a prime number?
+      Is <input id='inputField' type='number' oninput="document.getElementById('result').innerHTML=isPrime(value)"></input> a prime number?
       <br>
       <span id='result'>&nbsp</span>
   </div>
