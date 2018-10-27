@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 
-<!-- CSS -->
 <style>
   input[type=number]::-webkit-inner-spin-button,
   input[type=number]::-webkit-outer-spin-button {
@@ -23,7 +22,7 @@
     color: #2F3D45;
     padding: 0.5vw;
     outline: none;
-    width: 16vw;
+    width: 12vw;
     border:none;
   }
   #result {
@@ -31,7 +30,6 @@
   }
 </style>
 
-<!--JavaScript -->
 <script>
   const isPrime = number => number === ''
     ? '&nbsp'
@@ -45,7 +43,6 @@
       .length === 0 ? 'Yes' : 'No';
 </script>
 
-<!-- HTML -->
 <body>
   <div id='isPrimeWidget'>
       Is <input id='inputField' type='number' oninput="document.getElementById('result').innerHTML=isPrime(value)"></input> a prime number?

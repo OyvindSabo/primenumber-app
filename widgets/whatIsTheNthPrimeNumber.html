@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 
-<!-- CSS -->
 <style>
   input[type=number]::-webkit-inner-spin-button,
   input[type=number]::-webkit-outer-spin-button {
@@ -23,7 +22,7 @@
     color: #2F3D45;
     padding: 0.5vw;
     outline: none;
-    width: 16vw;
+    width: 12vw;
     border:none;
   }
   #nthPrimeResult {
@@ -31,7 +30,6 @@
   }
 </style>
 
-<!--JavaScript -->
 <script>
   const isPrime = number => number === ''
     ? false
@@ -57,7 +55,6 @@
   }
 </script>
 
-<!-- HTML -->
 <body>
   <div id='nthPrimeWidget'>
       What is the #<input id='nthPrimeInputField' type='number' oninput="document.getElementById('nthPrimeResult').innerHTML=nthPrime(value);" /> <span id='ordinal'></span> prime number?
