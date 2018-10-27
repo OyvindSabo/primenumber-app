@@ -8,14 +8,14 @@
     margin: 0;
   }
   #nthPrimeWidget {
-    font-size: calc(16px + 2vw);
+    font-size: calc(14px + 2vw);
     font-family: Arial Black;
     text-align: center;
     color: #2F3D45;
     margin: 8vw 0;
   }
   #nthPrimeInputField {
-    font-size: calc(16px + 2vw);
+    font-size: calc(14px + 2vw);
     background-color: #f5f5f5;
     font-family: Arial Black;
     border-radius: 0.5vw;
@@ -55,22 +55,12 @@
     }
     return primes[primes.length-1] || '&nbsp';
   }
-
-  const ordinal = number => number === ''
-    ? ''
-    : parseInt(number) === 1
-    ? 'st'
-    : parseInt(number) === 2
-    ? 'nd'
-    : parseInt(number) === 3
-    ? 'rd'
-    : 'th';
 </script>
 
 <!-- HTML -->
 <body>
   <div id='nthPrimeWidget'>
-      What is the <input id='nthPrimeInputField' type='number' oninput="document.getElementById('nthPrimeResult').innerHTML=nthPrime(value);document.getElementById('ordinal').innerHTML=ordinal(value)" /> <span id='ordinal'></span> prime number?
+      What is the #<input id='nthPrimeInputField' type='number' oninput="document.getElementById('nthPrimeResult').innerHTML=nthPrime(value);" /> <span id='ordinal'></span> prime number?
       <br>
       <span id='nthPrimeResult'>&nbsp</span>
   </div>
