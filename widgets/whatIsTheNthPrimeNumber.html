@@ -31,27 +31,38 @@
 </style>
 
 <script>
-  const isPrime = number => number === ''
-    ? false
-    : [0, 1].indexOf(parseInt(number)) !== -1
-    ? false
-    : parseInt(number) === 2
-    ? true
-    : [...Array(Math.ceil(Math.sqrt(parseInt(number))) - 1).keys()]
-      .map(divisor => divisor + 2)
-      .filter(divisor => parseInt(number) % divisor === 0)
-      .length === 0;
+  PRIMES = [2, 3];
+  const isPrime = number => {
+    if (PRIMES[PRIMES.length-1] >= number) {
+      return PRIMES.includes(number);
+    }
+    if (number === 1) {
+      return 2;
+    }
+    for (let i = 3; i < Math.ceil(Math.sqrt(parseInt(number))) - 1; i+=2) {
+      if (parseInt(number) % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
 
   const nthPrime = n => {
-    let primes = [];
-    let i = 2;
-    while (primes.length < n) {
-      if (isPrime(i)) {
-        primes.push(i);
-      }
-      i++;
+    if (n < 1) {
+      return '&nbsp';
     }
-    return primes[primes.length-1] || '&nbsp';
+    if (n <= PRIMES.length) {
+      return PRIMES[n-1];
+    }
+    // i is the currently highest known prime number
+    newNumber = PRIMES[PRIMES.length-1] + 2;
+    while (PRIMES.length < n) {
+      if (isPrime(newNumber)) {
+        PRIMES.push(newNumber);
+      }
+      newNumber += 2;
+    }
+    return PRIMES[PRIMES.length-1] || '&nbsp';
   }
 </script>
 
